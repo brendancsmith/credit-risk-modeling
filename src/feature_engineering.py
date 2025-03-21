@@ -38,7 +38,7 @@ def frequency_encoding(df: pd.DataFrame, cols: List[str] | None = None) -> pd.Da
 
         # Map frequency to each record
         df[col] = df[col].map(freq)
-    
+
     return df
 
 def drop_corr_pairs(df, corr_matrix):
