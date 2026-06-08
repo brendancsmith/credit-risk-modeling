@@ -11,7 +11,7 @@ def create_model(**kwargs):
     }
 
     params = defaults | kwargs
-    
+
     # Initialize model
     xgb_clf = XGBClassifier(**params)
 

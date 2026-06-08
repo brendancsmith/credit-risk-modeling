@@ -9,7 +9,7 @@ def load_data() -> pd.DataFrame:
     # Load the dataset
     dataset = Path(__file__).parent / '../data/raw/accepted_2007_to_2018Q4.csv.gz'
     df = pd.read_csv(dataset, compression='gzip', low_memory=False)
-    
+
     return df
 
 def drop_sparse_cols(df: pd.DataFrame, missing_rate: float = 0.5) -> pd.DataFrame:
