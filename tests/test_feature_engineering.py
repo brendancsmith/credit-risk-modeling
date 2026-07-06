@@ -11,7 +11,7 @@ class TestDropCorrPairs:
     def test_drops_high_corr_features(self):
         import pandas as pd
         import numpy as np
-    
+
         import numpy as np
         import numpy as np
         data = {
@@ -21,16 +21,16 @@ class TestDropCorrPairs:
         }
         df = pd.DataFrame(data)
         corr_matrix = df.corr()
-    
+
         result_df = drop_corr_pairs(df, corr_matrix)
-    
+
         assert 'A' not in result_df.columns or 'B' not in result_df.columns
 
     # DataFrame with all features having correlation greater than 0.8
     def test_all_features_high_corr(self):
         import pandas as pd
         import numpy as np
-    
+
         data = {
             'A': [1, 2, 3, 4, 5],
             'B': [1, 2, 3, 4, 5],
@@ -38,9 +38,9 @@ class TestDropCorrPairs:
         }
         df = pd.DataFrame(data)
         corr_matrix = df.corr()
-    
+
         result_df = drop_corr_pairs(df, corr_matrix)
-    
+
         assert len(result_df.columns) == 1
 class TestIndexCategories:
 
